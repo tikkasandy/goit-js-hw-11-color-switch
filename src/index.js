@@ -1,4 +1,3 @@
-import './sass/main.scss';
 import refs from './js/refs';
 import colors from './js/colors';
 
@@ -16,21 +15,15 @@ stopBtn.addEventListener('click', onStopBtnClick);
 function onStartBtnClick() {
     timerId = setInterval(changeColor, 1000);
     startBtn.disabled = true;
-}
-
-console.dir(startBtn);
+};
 
 function changeColor(e) {
-    
     const currentColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
-    
-    console.log(currentColor);
 
     body.style.backgroundColor = currentColor;
-    
-}
+};
 
 function onStopBtnClick() {
     clearInterval(timerId);
     startBtn.disabled = false;
-}
+};
